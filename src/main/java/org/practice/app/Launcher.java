@@ -7,7 +7,7 @@ public class Launcher {
         String title = "Bouncing ball";
         int width = 640;
         int height = 480;
-        Game game = new Game(titie, width, height);
+        Game game = new Game(title, width, height);
         game.start();
     }
 }
