@@ -7,6 +7,7 @@ import java.awt.Dimension;
 public class Display {
 
     private JFrame frame;
+
     private Canvas canvas;
 
     private String title;
@@ -40,5 +41,9 @@ public class Display {
 
     public JFrame getFrame() {
         return frame;
+    }
+
+    public Canvas getCanvas() {
+        return canvas;
     }
 }
