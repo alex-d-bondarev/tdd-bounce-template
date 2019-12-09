@@ -4,7 +4,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-public class Assets {
+public class Sprites {
 
     public BufferedImage ball;
     public BufferedImage bigSpike;
@@ -23,7 +23,7 @@ public class Assets {
     public BufferedImage square;
     public BufferedImage start;
 
-    public Assets() {
+    public Sprites() {
         ball = loadImage("/sprites/ball.png");
     }
 

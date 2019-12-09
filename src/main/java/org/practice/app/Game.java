@@ -1,6 +1,6 @@
 package org.practice.app;
 
-import org.practice.app.gfx.Assets;
+import org.practice.app.gfx.Sprites;
 import org.practice.app.gfx.Display;
 import org.practice.app.input.KeyManager;
 
@@ -11,7 +11,7 @@ public class Game {
     private int width;
     private int height;
     private String title;
-    private Assets assets;
+    private Sprites sprites;
     private World world;
 
     public Game(String title, int width, int height) {
@@ -22,7 +22,7 @@ public class Game {
         keyManager = new KeyManager();
         display = new Display(title, width, height);
         display.getFrame().addKeyListener(keyManager);
-        assets = new Assets();
+        sprites = new Sprites();
         world = new World();
     }
 
@@ -33,5 +33,13 @@ public class Game {
     private void tick() {
         keyManager.tick();
         world.tick();
+    }
+
+    public World getWorld() {
+        return world;
+    }
+
+    public KeyManager getKeyManager() {
+        return keyManager;
     }
 }

@@ -20,4 +20,8 @@ public class World {
     public void render(Graphics g) {
         player.render(g);
     }
+
+    public Player getPlayer() {
+        return player;
+    }
 }

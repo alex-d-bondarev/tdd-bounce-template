@@ -1,9 +1,8 @@
 package org.practice.app;
 
-public class Launcher {
+public class Main {
 
-    public static void main(String[] args )
-    {
+    public static void main(String[] args) {
         String title = "Bouncing ball";
         int width = 640;
         int height = 480;
