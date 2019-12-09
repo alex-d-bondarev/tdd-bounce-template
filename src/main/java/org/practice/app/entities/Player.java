@@ -1,45 +1,45 @@
 package org.practice.app.entities;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import org.practice.app.World;
+import org.practice.app.input.KeyManager;
+
 import java.awt.image.BufferedImage;
 
 public class Player extends GameEntity {
 
-    public Player(float x, float y) {
+    private float speed = 1;
+    private World world;
+    private KeyManager keyManager;
+    private final BufferedImage playerSprite;
+
+    public Player(float x, float y, World world) {
         super(x, y, 64, 64);
 
         bounds.x = 16;
         bounds.y = 32;
         bounds.width = 32;
         bounds.height = 32;
+
+        this.world = world;
+        keyManager = world.getKeyManager();
+        playerSprite = world.getSprites().ball;
     }
 
     public void tick() {
+        if (keyManager.isUpKeyPressed()) {
+            y = y - speed;
+        }
     }
 
-
-    @Override
-    public void render(Graphics g) {
-        g.drawImage(getAsset(),
-                (int) x,
-                (int) y,
-                width,
-                height,
-                null);
-
-//        showCollisionBoundary(g);
+    public float getSpeed() {
+        return speed;
     }
 
-    private void showCollisionBoundary(Graphics g) {
-        g.setColor(Color.red);
-        g.fillRect((int) (x + bounds.x),
-                (int) (y + bounds.y),
-                bounds.width,
-                bounds.height);
+    protected BufferedImage getSprite() {
+        return playerSprite;
     }
 
-    private BufferedImage getAsset() {
-        return null;
+    public World getWorld() {
+        return world;
     }
 }

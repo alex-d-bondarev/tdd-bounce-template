@@ -1,4 +1,4 @@
-package org.practice.app;
+package org.practice.app.sprites;
 
 import org.junit.Assert;
 import org.junit.Test;

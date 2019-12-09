@@ -27,7 +27,7 @@ public class Sprites {
         ball = loadImage("/sprites/ball.png");
     }
 
-    private BufferedImage loadImage(String path){
+    private BufferedImage loadImage(String path) {
         try {
 
             return ImageIO.read(getClass().getResource(path));
