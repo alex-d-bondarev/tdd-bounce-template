@@ -29,7 +29,6 @@ public class Sprites {
 
     private BufferedImage loadImage(String path) {
         try {
-
             return ImageIO.read(getClass().getResource(path));
         } catch (IOException e) {
             e.printStackTrace();

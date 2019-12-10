@@ -9,16 +9,15 @@ import java.awt.image.BufferStrategy;
 
 public class Game {
     private BufferStrategy bufferStrategy;
-    private Graphics graphics;
-
-    private final int width;
-    private final int height;
     private Display display;
+    private Graphics graphics;
     private KeyManager keyManager;
-    private boolean running;
-
     private Sprites sprites;
     private World world;
+
+    private boolean running;
+    private final int width;
+    private final int height;
 
     public Game(String title, int width, int height) {
         this.width = width;
