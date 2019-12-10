@@ -3,6 +3,7 @@ package org.practice.app.entities;
 import org.junit.Before;
 import org.junit.Test;
 import org.practice.app.Game;
+import org.practice.app.TestGameSetup;
 import org.practice.app.World;
 
 import java.awt.event.KeyEvent;
@@ -14,17 +15,20 @@ import static org.junit.Assert.assertTrue;
 public class PlayerTest {
 
     private final double DELTA = 0.01;
+
+    private Game game;
     private Player player;
     private World world;
 
     @Before
     public void setUp() {
-        world = new Game("test", 200, 200).getWorld();
+        game = new TestGameSetup().generateGame();
+        world = game.getWorld();
         player = world.getPlayer();
     }
 
     @Test
-    public void playerCanMove() {
+    public void playerHasSpeed() {
         float speed = player.getSpeed();
         assertTrue(speed > 0);
     }
@@ -50,26 +54,26 @@ public class PlayerTest {
 
     @Test
     public void whenUpButtonIsPressed_playerShouldMovePerTick() {
-        Game game = new Game("test", 200, 200);
-        Player gamePlayer = game.getWorld().getPlayer();
-        float startY = gamePlayer.getY();
+        float playerSpeed = player.getSpeed();
+        float startY = player.getY();
+
         game.getKeyManager().pressKey(KeyEvent.VK_UP);
-        gamePlayer.tick();
-        float newYPosition = gamePlayer.getY();
-        float playerSpeed = gamePlayer.getSpeed();
+        player.tick();
+
+        float newYPosition = player.getY();
         assertTrue(playerSpeed > 0);
         assertEquals(startY - playerSpeed, newYPosition, DELTA);
     }
 
     @Test
     public void whenUpButtonIsUnpressed_playerShouldNotMovePerTick() {
-        Game game = new Game("test", 200, 200);
-        Player gamePlayer = game.getWorld().getPlayer();
-        float startY = gamePlayer.getY();
+        float startY = player.getY();
+
         game.getKeyManager().pressKey(KeyEvent.VK_UP);
         game.getKeyManager().releaseKey(KeyEvent.VK_UP);
-        gamePlayer.tick();
-        float newYPosition = gamePlayer.getY();
+        player.tick();
+
+        float newYPosition = player.getY();
         assertEquals(startY, newYPosition, DELTA);
     }
 }

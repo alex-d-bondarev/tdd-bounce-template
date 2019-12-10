@@ -13,10 +13,7 @@ public class GameTest {
 
     @Before
     public void setUp() {
-        String title = "Bouncing ball";
-        int width = 640;
-        int height = 480;
-        game = new Game(title, width, height);
+        game = new TestGameSetup().generateGame();
     }
 
 
