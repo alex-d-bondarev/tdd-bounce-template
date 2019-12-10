@@ -1,5 +1,5 @@
-# tdd-bounce-template
-=====================
+tdd-bounce-template
+===================
 
 Template for team TDD practice
 
@@ -67,7 +67,7 @@ Practice tasks
 
 ### Tasks
 
-#### Add support for _left_ button
+#### 1 - Add support for _left_ button
 
 When `Left` button is pressed a ball should move _left_, until `Left` is released.
 
@@ -79,7 +79,7 @@ When `Left` button is pressed a ball should move _left_, until `Left` is release
 ---------------------      ---------------------
 ```
 
-#### Add support for _down_ button
+#### 2 - Add support for _down_ button
 
 When `Down` button is pressed a ball should move _down_, until `Down` is released.
 
@@ -91,7 +91,7 @@ When `Down` button is pressed a ball should move _down_, until `Down` is release
 ---------------------      ---------------------
 ```
 
-#### Add support for _right_ button
+#### 3- Add support for _right_ button
                      
 When `Right` button is pressed a ball should move _right_, until `Right` is released.
 
@@ -103,7 +103,7 @@ When `Right` button is pressed a ball should move _right_, until `Right` is rele
 ---------------------      ---------------------
 ```
 
-#### Add block entities
+#### 4 - Add block entities
 
 It should be possible to render block entities (see [sprites](src/main/resources/sprites) -> square).
 Block entity should have the same size as the ball.
@@ -116,7 +116,7 @@ Block entity should have the same size as the ball.
 ---------------------      ---------------------
 ```
 
-#### Add corner entities
+#### 5 - Add corner entities
 
 It should be possible to render corner entities (see [sprites](src/main/resources/sprites)): 
 - left_bottom
@@ -133,7 +133,7 @@ Corner entities should have the same size as the ball.
 ---------------------      ---------------------
 ```
 
-#### Add gravity
+#### 6 - Add gravity
 
 When no buttons are pressed the ball should fall to screen bottom.
 
@@ -145,7 +145,7 @@ When no buttons are pressed the ball should fall to screen bottom.
 ---------------------      ---------------------
 ```
 
-#### Add square block left and right collision
+#### 7 - Add square block left and right collision
 
 When ball is moving left or right it should not go through the square block.
 _Do not add top and bottom collision._
@@ -158,7 +158,7 @@ _Do not add top and bottom collision._
 ---------------------      ---------------------
 ```
 
-#### Add jump functionality
+#### 8 - Add jump functionality
 
 When Up button is pressed then the ball should start jumping:
 - As soon as jump button is released the jump should stop;
@@ -177,14 +177,14 @@ When Up button is pressed then the ball should start jumping:
 ---------------------      ---------------------
 ```
 
-#### Draw screen border
+#### 9 - Draw screen border
 
 Render lines that highlight map borders.
 Map should be 5px smaller than screen size from each side (like margin in html).
 All entities should be rendered inside map.
 The ball should not be able to cross the map border.
 
-#### Add properties support
+#### 10 - Add properties support
 
 Property file should store at least the following data:
 - ball speed
@@ -192,7 +192,7 @@ Property file should store at least the following data:
 - ball starting position
 - map margin (optional, 5px by default).
 
-#### Add map support
+#### 11 - Add map support
 
 Map should not be hardcoded. Instead it should be loaded from another property file.
 The first line in file should have map `width` and `height`.
